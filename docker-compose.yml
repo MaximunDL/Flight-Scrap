@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  database:
+    image: mongo
+    container_name : mongo-dtt
+    restart: always
+    command: mongod --auth
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=a123456!
+      - MONGO_INITDB_DATABASE=db_dtt
+    ports:
+      - "27017:27017"
+    volumes: 
+      - ./mongo-init.py:/docker-entrypoint-initdb.d/mongo-init.py:ro
+      
+volumes:
+  mongodbdata:
+    driver: local
