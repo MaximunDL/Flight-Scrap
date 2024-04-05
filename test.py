@@ -12,11 +12,21 @@ def scrape_web(url):
 
     for item in items:
         link_element = item.find('a', class_='ui-search-item__group__element ui-search-link__title-card ui-search-link')
+
+        variables_html = [item.text.strip() for item in soup.find_all('div', {'class': 'ui-search-item__group'})]
+        precios = [item.text.strip() for item in soup.find_all('div', {'class': 'ui-search-price__second-line'})]
+
+        #datalayer_script = item_soup.find('script', {'id': 'datalayer'})
+        #datalayer = datalayer_script.text if datalayer_script else None
+
         if link_element:
             link = link_element.get('href')
             data = {
                 "link": link,
-                "time": datetime.now().isoformat()
+                "time": datetime.now().isoformat(),
+                #"datalayer": datalayer,
+                "variables": variables_html,
+                "precios": precios
             }
             data_list.append(data)
 
