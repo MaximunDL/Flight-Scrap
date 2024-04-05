@@ -1,35 +1,33 @@
 import requests, json, uuid, time, random
 from bs4 import BeautifulSoup
 from datetime import datetime
-from pymongo import MongoClient
+import mongoinit
 
 def scrape_web(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    variables_html = [item.text.strip() for item in soup.find_all('div', {'class': 'ui-search-item__group'})]
-    precios = [item.text.strip() for item in soup.find_all('div', {'class': 'ui-search-price__second-line'})]
+    items = soup.find_all('div', class_='ui-search-item__group ui-search-item__group--title')
+    data_list = []
 
-    datalayer_script = soup.find('script', {'id': 'datalayer'})
-    datalayer = datalayer_script.text if datalayer_script else None
+    for item in items:
+        link_element = item.find('a', class_='ui-search-item__group__element ui-search-link__title-card ui-search-link')
+        if link_element:
+            link = link_element.get('href')
+            data = {
+                "link": link,
+                "time": datetime.now().isoformat()
+            }
+            data_list.append(data)
 
-    file_name = str(uuid.uuid4()) + ".json"
-
-    data = {
-        "variables_html": variables_html,
-        "precios": precios,
-        "datalayer": datalayer,
-        "time": datetime.now().isoformat()
-    }
-
-    with open(file_name, 'w') as file:
-        json.dump(data, file)
-
-    return data, file_name
-  
+    return data_list
 
 url = 'https://listado.mercadolibre.com.pe/samsung-a32#D[A:samsung%20a32]'
+scraped_data = scrape_web(url)
 
-scrape_data, file_name = scrape_web(url)
+file_name = str(uuid.uuid4()) + ".json"
 
-time.sleep(random.uniform(3, 5))
+with open(file_name, 'w') as file:
+    json.dump(scraped_data, file, indent=4)
+
+print("Data scraped and saved to", file_name)
