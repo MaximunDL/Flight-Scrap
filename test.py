@@ -1,7 +1,7 @@
 import requests, json, uuid, time, random
 from bs4 import BeautifulSoup
 from datetime import datetime
-import mongoinit
+#import mongoinit
 
 def scrape_web(url):
     response = requests.get(url)

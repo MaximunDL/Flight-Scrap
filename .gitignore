@@ -1,3 +1,5 @@
 *.json
 
 venv
+
+password-atlas.txt
