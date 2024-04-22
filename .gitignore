@@ -2,6 +2,10 @@
 
 venv
 
-password-atlas.txt
-
 Mercadolibre.py
+
+data
+
+.env
+
+mongoinit.py
