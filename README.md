@@ -1,0 +1,1 @@
+Script con python, utlizando la libreria BeautifulSoap, MongoDB para hacer Web Scraping a una pagina de mercadolibre para obtener una lista de objetos para comparar precios de distintos productos para ver cual es el precio mas economico
