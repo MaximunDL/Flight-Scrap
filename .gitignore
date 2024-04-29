@@ -2,10 +2,8 @@
 
 venv
 
-Mercadolibre.py
+Test.py
 
 data
 
 .env
-
-mongoinit.py

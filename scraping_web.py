@@ -8,15 +8,14 @@ from bson import ObjectId
 
 # Cargar variables de entorno
 load_dotenv()
-
-# Obtener las variables de entorno para la conexion a mongoDB
+# Obtener las variables de entorno para la conexion a mongoDB # pasar a mongoconnect.py
 username = os.getenv("MONGODB_USERNAME")
 password = os.getenv("MONGODB_PASSWORD")
+db_name = os.getenv("MONGODB_NAME")
+# Construir la URI de conexión #pasar a mongoconnect.py
+uri = f"mongodb+srv://{username}:{password}@scrapdb.lw4npwl.mongodb.net/?retryWrites=true&w=majority&appName={db_name}"
 
-# Construir la URI de conexión
-uri = f"mongodb+srv://{username}:{password}@scrapdb.lw4npwl.mongodb.net/?retryWrites=true&w=majority&appName=ScrapDB"
-
-#Funcion para serializar ObjectId a str para JSON
+#Funcion para serializar ObjectId a str para JSON 
 def default_serializer(obj):
     if isinstance(obj, ObjectId):
         return str(obj)
@@ -47,7 +46,7 @@ def scrape_web(url):
             }
             product_link.append(data)
 
-    # Conectar a MongoDB
+    # Conectar a MongoDB #pasar a mongoconnect.py
     client = MongoClient(uri, server_api=ServerApi('1'))
     db = client['web_scraping']
     collection = db['data']
@@ -80,12 +79,13 @@ def scrape_web(url):
     return results
 
 #url de la pagina web para hacer scraping
-url = 'https://listado.mercadolibre.com.pe/samsung-a32#D[A:samsung%20a32]'
+url = 'https://listado.mercadolibre.com.pe/samsung-j2-prime#D[A:samsung%20j2%20prime]'
 scraped_data = scrape_web(url)
 
-#Nombre del archivo JSON para guardar los datos 
-file_name = os.path.join(str(uuid.uuid4()) + ".json")
+data_folder = 'data/'
 
+#Nombre del archivo JSON para guardar los datos #crear funcion para agregarlo dentro de jsondump
+file_name = os.path.join(data_folder, str(uuid.uuid4()) + ".json")
 #Guardar los datos en un archivo JSON
 with open(file_name, 'w') as file:
     json.dump(scraped_data, file, indent=4, default=default_serializer)
