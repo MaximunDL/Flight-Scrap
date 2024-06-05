@@ -1,0 +1,25 @@
+2024-05-13 06:46:24,853 - INFO - Cargando credenciales del servicio de Google Sheets...
+2024-05-13 06:46:28,112 - INFO - Se encontraron 1 URLs válidas en la hoja de cálculo.
+2024-05-13 06:46:28,114 - INFO - Iniciando scraping para la URL: https://listado.mercadolibre.com.pe/huawei-p60#D[A:huawei%20p60]
+2024-05-13 06:54:43,681 - INFO - Cargando credenciales del servicio de Google Sheets...
+2024-05-13 06:54:47,223 - INFO - Se encontraron 1 URLs válidas en la hoja de cálculo.
+2024-05-13 06:54:47,225 - INFO - Iniciando scraping para la URL: https://listado.mercadolibre.com.pe/huawei-p60#D[A:huawei%20p60]
+2024-05-13 06:56:14,892 - INFO - Cargando credenciales del servicio de Google Sheets...
+2024-05-13 06:56:18,466 - INFO - Se encontraron 1 URLs válidas en la hoja de cálculo.
+2024-05-13 06:56:18,469 - INFO - Iniciando scraping para la URL: https://listado.mercadolibre.com.pe/huawei-p60#D[A:huawei%20p60]
+2024-05-13 06:57:51,088 - INFO - Cargando credenciales del servicio de Google Sheets...
+2024-05-13 06:57:55,338 - INFO - Se encontraron 1 URLs válidas en la hoja de cálculo.
+2024-05-13 06:57:55,340 - INFO - Iniciando scraping para la URL: https://listado.mercadolibre.com.pe/huawei-p60#D[A:huawei%20p60]
+2024-05-13 06:59:41,938 - INFO - Cargando credenciales del servicio de Google Sheets...
+2024-05-13 06:59:45,216 - INFO - Se encontraron 1 URLs válidas en la hoja de cálculo.
+2024-05-13 06:59:45,218 - INFO - Iniciando scraping para la URL: https://listado.mercadolibre.com.pe/huawei-p60#D[A:huawei%20p60]
+2024-05-13 07:01:04,187 - INFO - Cargando credenciales del servicio de Google Sheets...
+2024-05-13 07:01:06,968 - INFO - Se encontraron 1 URLs válidas en la hoja de cálculo.
+2024-05-13 07:01:06,970 - INFO - Iniciando scraping para la URL: https://listado.mercadolibre.com.pe/huawei-p60#D[A:huawei%20p60]
+2024-05-13 07:01:16,073 - INFO - Scraping completado para la URL: https://listado.mercadolibre.com.pe/huawei-p60#D[A:huawei%20p60]
+2024-05-13 07:01:16,074 - INFO - Scraping completo y datos guardados en MongoDB.
+2024-05-13 07:12:33,238 - INFO - Cargando credenciales del servicio de Google Sheets...
+2024-05-13 07:12:36,765 - INFO - Se encontraron 1 URLs válidas en la hoja de cálculo.
+2024-05-13 07:12:36,767 - INFO - Iniciando scraping para la URL: https://listado.mercadolibre.com.pe/huawei-p20-pro#D[A:huawei%20p20%20pro]
+2024-05-13 07:12:41,062 - INFO - Scraping completado para la URL: https://listado.mercadolibre.com.pe/huawei-p20-pro#D[A:huawei%20p20%20pro]
+2024-05-13 07:12:41,063 - INFO - Scraping completo y datos guardados en MongoDB.

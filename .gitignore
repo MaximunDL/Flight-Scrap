@@ -3,7 +3,10 @@
 venv
 
 Test.py
+Test1.py
 
 data
 
 .env
+
+docker-compose.yml
